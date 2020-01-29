@@ -1,0 +1,54 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-4">
+        <img id="logo" src="../../logo.png" alt="logo">
+    </div>
+    <div class="col-md-8">
+        <div class="row device-selector">
+            <div class="col-md-3 col-lg-2">
+              <p><b>Объект: </b></p>
+            </div>
+            <div class="col-md-9 col-lg-10">
+              <select class="browser-default custom-select" [(ngModel)]="selectedDevice" (ngModelChange)="onChangeDevice($event)">
+                <option *ngFor="let device of devices" [ngValue]="device">{{device.name}}</option>
+              </select>
+            </div>
+          </div>
+    </div>
+  </div>
+  
+
+  <h1 class="text-center">Текущее значение силы тока (А)</h1>
+
+  <br>
+
+  <div class="row">
+    <div class="offset-md-1 col-md-11">
+      <p style="display: inline-block; padding-top: 7px;"><b>Дата:</b> {{displayedDate?.toLocaleDateString()}} </p>
+      <button type="button" class="btn btn-outline-primary float-right" (click)="saveCsv()">Данные за 5 дней в csv</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">Время</th>
+            <th scope="col">Датчик</th>
+            <th scope="col">Значение</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of sensorData">
+            <td>{{data.time}}</td>
+            <td>{{data.sensor}}</td>
+            <td>{{data.value}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

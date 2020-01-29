@@ -1,0 +1,24 @@
+.table td, .table th {
+    text-align: center;   
+ }
+
+ .btn {
+     margin-left: 8px;
+     margin-bottom: 8px;
+ }
+
+#logo
+{
+   width: 100%;
+   max-width: 400px;
+   margin-top: 6px;
+}
+
+.device-selector {
+    margin-top: 35px;
+}
+
+.device-selector p {
+    position: relative;
+    top: 6px;
+}
